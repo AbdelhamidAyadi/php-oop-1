@@ -12,6 +12,8 @@ class Movie {
         $this -> date = $_date;
         $this -> director = $_director;
         $this -> rating = $_rating;
+        $this -> setRecommendation($_rating);
+
     }
     public function SetRecommendation($rating){
         if ($rating > 5) {
@@ -19,10 +21,9 @@ class Movie {
         }else{
             $this -> recommended = "Not Recommended";
         }
+        return $this;
     }
-    public function getRecommendation(){
-        return $this-> recommended;
-    }
+    
 }
 
 $Interstellar = new Movie("Interstellar" ,2014 ,"Christopher Nolan" , 8.6);
@@ -34,10 +35,12 @@ $ThePrestige = new Movie("The Prestige" ,2006 ,"Christopher Nolan", 8.5);
 echo "<p>" . $Interstellar -> title . "</p>";
 echo "<p>" . $Interstellar -> date . "</p>";
 echo "<p>" . $Interstellar -> director . "</p>";
+echo "<p>" . $Interstellar -> recommended . "</p>";
 echo "<hr/>";
 echo "<p>" . $Inception -> title . "</p>";
 echo "<p>" . $Inception -> date . "</p>";
 echo "<p>" . $Inception -> director . "</p>";
+echo "<p>" . $Inception -> recommended . "</p>";
 
 
 
